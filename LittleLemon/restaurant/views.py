@@ -25,20 +25,30 @@ def index(request):
 #@permission_classes([IsAuthenticated])
 class UserViewSet(generics.ListCreateAPIView):
     queryset = User.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = UserSerializer
 
 
 
 class MenuItemView(generics.ListCreateAPIView):
     queryset = Menu.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = MenuSerializer
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
     queryset = Menu.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = MenuSerializer
 
 
 
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Bookings.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = BookingSerializer
+
+
+@api_view()
+@permission_classes([IsAuthenticated])
+def msg(request):
+    return Response({"message":"This view is protected"})
