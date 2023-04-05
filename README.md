@@ -2,6 +2,15 @@
 
 API Paths to Check:
 
+/restaurant
+
+/restaurant/booking/
+
+/restaurant/menu/
+
+/restaurant/menu/<int:pk>/
+
+/restaurant/users/
 
 /api/booking/
 
@@ -11,7 +20,7 @@ API Paths to Check:
 
 /api/users/
 
-/restaurant
+
 
 /auth/token/login/
 
